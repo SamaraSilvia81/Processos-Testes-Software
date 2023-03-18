@@ -27,3 +27,43 @@ Considere um sistema de cadastro de alunos (implementação disponível), onde �
 **DICA:** todas as funcionalidades listadas neste exercício encontram-se implementados a partir da classe RepositorioAluno.java
 
 ## Resultado
+
+- **Visualziação do Sistema**
+
+Antes de começarmos a testar o nosso sistema de alunos, vamos apenas visualizar se a classe que fizemos deu certo.
+
+```java
+
+@Test
+  public void myTest() {
+    System.out.println("Meu teste...");
+  }
+
+```
+
+- **Teste 01: Inserir Alunos**
+
+Estando criado a nossa class "Aluno", com os requisitos - nome e matricula - necessários e já criado um método para cadastrar os alunos. Este teste se concentra em testar se o método de cadastro está funcionando. 
+
+```java
+
+@Test
+  public void inserirAluno() throws AlunoJaCadastradoException {
+    RepositorioAluno repositorioAluno = new RepositorioAluno();
+
+    Aluno aluno = new Aluno("Samara Silvia","012");
+    Aluno aluno2 = new Aluno("Eudes Pereira","023");
+    Aluno aluno3 = new Aluno("Matheus Santos","034");
+
+    repositorioAluno.inserirAluno(aluno);
+    repositorioAluno.inserirAluno(aluno2);
+    repositorioAluno.inserirAluno(aluno3);
+
+    Assertions.assertEquals(3,repositorioAluno.getNumberAlunos());
+  }
+```
+
+Como foi visto, precisou instanciar a nossa classe, inserir os dados e depois verificar a quantidade de alunos na nossa lista de array, se o valor é compatível com o nosso cadastro. 
+
+Perceba que agora precisamos usar o "Assertions" antes de qualquer "assert...", isso pois, estamos usando o JUnit 5.
+
