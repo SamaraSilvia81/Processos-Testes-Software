@@ -28,7 +28,7 @@ Considere um sistema de cadastro de alunos (implementação disponível), onde �
 
 ## Resultado
 
-- **Visualziação do Sistema**
+- **Visualização do Sistema**
 
 Antes de começarmos a testar o nosso sistema de alunos, vamos apenas visualizar se a classe que fizemos deu certo.
 
